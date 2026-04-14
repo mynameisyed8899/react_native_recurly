@@ -1,0 +1,17 @@
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import { Link, useLocalSearchParams } from 'expo-router'
+
+const SubscriptionDetails = () => {
+  const {id} = useLocalSearchParams< { id: string } > ();
+  return (
+    <View>
+      <Text> SubscriptionDetails : {id}</Text>
+      <Link href="/">Go Back</Link>
+    </View>
+  )
+}
+
+export default SubscriptionDetails;
+
+const styles = StyleSheet.create({})
