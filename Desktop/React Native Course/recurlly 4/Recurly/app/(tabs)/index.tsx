@@ -27,7 +27,7 @@ export default function App() {
   return (
     <SafeAreaView className="flex-1 bg-background p-5">
       
-
+      
       <FlatList
         ListHeaderComponent={() => (
           <>
@@ -55,7 +55,7 @@ export default function App() {
 
             <View className="mb-5">
               <ListHeading title="Upcoming" />
-              <ListHeading title="All Subscriptions" />
+            
 
               <FlatList
                 data={UPCOMING_SUBSCRIPTIONS}
@@ -67,11 +67,12 @@ export default function App() {
                 showsHorizontalScrollIndicator={false}
                 ListEmptyComponent={
                   <Text className="home-empty-state">
-                    no Upcoming Renewals.
+                      No Upcoming Renewals.
                   </Text>
                 }
               />
             </View>
+            <ListHeading title="All Subscriptions" />
           </>
         )}
         data={HOME_SUBSCRIPTIONS}
