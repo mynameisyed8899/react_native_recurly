@@ -1,18 +1,22 @@
 {
-  "extends": "expo/tsconfig.base",
+  "extends": "expo/tsconfig.base", // use Expo's default TypeScript settings
+
   "compilerOptions": {
-    "strict": true,
+    "strict": true, // enable strict type checking (catches more errors)
+
+    // "@/*" → “if you see this…”
+    // ["./*"] → “…go here”        
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"], // "@" = shortcut to project root
+      "@/components/*": ["./app/components/*"] // shortcut to components folder
     }
   },
+
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    ".expo/types/**/*.ts",
-    "expo-env.d.ts",
-    "nativewind-env.d.ts"
+    "**/*.ts", // include all TypeScript files
+    "**/*.tsx", // include all React TypeScript files
+    ".expo/types/**/*.ts", // include Expo's internal type files
+    "expo-env.d.ts", // include Expo environment type definitions
+    "nativewind-env.d.ts" // include NativeWind (Tailwind) type support
   ]
 }
